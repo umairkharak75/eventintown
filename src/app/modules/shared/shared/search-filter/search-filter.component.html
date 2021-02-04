@@ -1,0 +1,19 @@
+<mat-form-field class="example-chip-list">
+	<mat-chip-list #chipList aria-label="Fruit selection"
+	
+	>
+    <mat-icon matPrefix>search</mat-icon>
+	  <input
+	  [placeholder]="placeHolder"
+	  
+		#fruitInput
+		[formControl]="inputControl"
+		
+		
+		[matChipInputFor]="chipList"
+		
+		>
+	</mat-chip-list>
+	
+	
+  </mat-form-field>

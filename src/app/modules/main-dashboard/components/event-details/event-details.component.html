@@ -1,0 +1,49 @@
+
+
+
+<div class="event-container" fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" >
+    <img  (click)="backToSearch()" fxFlex="3"class="eventIcon"src="../../../../../assets/back.png">
+    <div  (click)="backToSearch()" fxFlex="20">
+       
+        <h3>Back to Search  </h3>
+
+     </div>
+
+    
+     <div fxFlex="100">
+
+     </div>
+     <ngx-spinner></ngx-spinner>
+   <div  fxflex="30" *ngIf="artistDetails">
+    <app-artist-card
+     [name]="artistDetails.name"
+     [facebookUrl]="artistDetails.facebook_page_url"   
+     [profilePicUrl]="artistDetails.image_url" 
+    ></app-artist-card>
+
+   </div>
+   
+<ng-container fxFlex="100%">
+
+    <div  class="container" fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="10.5%" fxLayoutAlign="start" *ngIf="allEvents.length">
+        
+        <div fxFlex="30" *ngFor="let events of allEvents">
+            <app-event-card
+             
+            [date]="events.datetime"
+             [venu]="events.name"
+             [city]="events.city"
+             [country]="events.country"
+            ></app-event-card>
+         </div>
+       
+        
+       </div>
+
+</ng-container>
+<h2 *ngIf="!allEvents.length && !hasSpinner ">No Events found</h2>
+   
+       </div>
+       
+             
+ 
