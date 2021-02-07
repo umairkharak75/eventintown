@@ -246,14 +246,14 @@
   templateUrl: &#x27;./artist-card.component.html&#x27;,
   styleUrls: [&#x27;./artist-card.component.css&#x27;]
 })
-export class ArtistCardComponent  {
+export class ArtistCardComponent {
 
   @Input() name: string;
-  @Input() profilePicUrl:string;
-  @Input() facebookUrl:string;
+  @Input() profilePicUrl: string;
+  @Input() facebookUrl: string;
   constructor() { }
 
-  
+
 
 }
 </code></pre>
@@ -276,16 +276,16 @@ export class ArtistCardComponent  {
                     <code>./artist-card.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.example-header-image {
-  
-    background-size: cover;
-    width: 60px;
-    border-radius: 50%;
-    height: 60px;
-  }
-  .circular--square {
-    border-radius: 50%;
-  }
 
+  background-size: cover;
+  width: 60px;
+  border-radius: 50%;
+  height: 60px;
+}
+
+.circular--square {
+  border-radius: 50%;
+}
 </code></pre>
     </div>
 

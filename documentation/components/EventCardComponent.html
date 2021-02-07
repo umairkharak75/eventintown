@@ -252,13 +252,13 @@
   templateUrl: &#x27;./event-card.component.html&#x27;,
   styleUrls: [&#x27;./event-card.component.css&#x27;]
 })
-export class EventCardComponent  {
+export class EventCardComponent {
 
 
-@Input() date: string;
-@Input() city:string;
-@Input() country:string;
-@Input() venu:string;
+  @Input() date: string;
+  @Input() city: string;
+  @Input() country: string;
+  @Input() venu: string;
 
 
 }
@@ -299,17 +299,18 @@ export class EventCardComponent  {
                     <code>./event-card.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.example-header-image {
-  
-    background-size: cover;
-    width: 60px;
-    border-radius: 50%;
-    height: 60px;
-  }
 
-  .mat-card{
-    height: 180px;
-    width: 300px;
-  }</code></pre>
+  background-size: cover;
+  width: 60px;
+  border-radius: 50%;
+  height: 60px;
+}
+
+.mat-card {
+  height: 180px;
+
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">

@@ -298,7 +298,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component,  EventEmitter, Input, Output } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, Output } from &#x27;@angular/core&#x27;;
 import { FormControl } from &#x27;@angular/forms&#x27;;
 
 import {
@@ -307,25 +307,29 @@ import {
 } from &#x27;rxjs/operators&#x27;;
 
 @Component({
-  selector: &#x27;app-search-filter&#x27;,
-  templateUrl: &#x27;./search-filter.component.html&#x27;,
-  styleUrls: [&#x27;./search-filter.component.css&#x27;]
+	selector: &#x27;app-search-filter&#x27;,
+	templateUrl: &#x27;./search-filter.component.html&#x27;,
+	styleUrls: [&#x27;./search-filter.component.css&#x27;]
 })
-export class SearchFilterComponent  {
+export class SearchFilterComponent {
 	inputControl &#x3D; new FormControl();
-	@Input() placeHolder:string;
+	@Input() placeHolder: string;
 	@Output() onkeyUp &#x3D; new EventEmitter();
 	@Output() onChangeEmitter &#x3D; new EventEmitter();
 	constructor() {
+		/**
+ * this observable will emit search text for every 3 seconds of delaytime and also
+ * if text is updated on search input
+ */
 		this.inputControl.valueChanges
 			.pipe(distinctUntilChanged(), debounceTime(300))
 			.subscribe((data) &#x3D;&gt; {
-				
+
 				if (this.inputControl.value !&#x3D;&#x3D; null) {
 					this.onkeyUp.emit(data);
 				}
 			});
-	}	
+	}
 }
 
 </code></pre>
