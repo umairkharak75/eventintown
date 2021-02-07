@@ -12,13 +12,26 @@ import { URLS } from '../../constant';
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
+  /**
+     * @ignore
+     */
   allEvents:IEvents[]=[]
+  /**
+     * @ignore
+     */
   artistDetails:IArtists
+  /**
+     * @ignore
+     */
   hasSpinner:boolean=true
   constructor(private activatedRoute: ActivatedRoute,public artist:ArtistService ,public location:  Location,public spinner:NgxSpinnerService) { 
   }
-
+ /**
+ * in ngOnInit method .api to fetch all event is being called 
+ * for artist
+ */
   ngOnInit(): void {
+   
     this.spinner.show();
     this.artistDetails =this.artist.getArtistDetails()  
     const name=this.activatedRoute.snapshot.params.name; 
@@ -39,6 +52,10 @@ export class EventDetailsComponent implements OnInit {
    })
 
   }
+  /**
+ * this function will return to previous activated route
+ * 
+ */
   backToSearch(){
 this.location.back()
   }

@@ -17,6 +17,10 @@ export class SearchFilterComponent  {
 	@Output() onkeyUp = new EventEmitter();
 	@Output() onChangeEmitter = new EventEmitter();
 	constructor() {
+		/**
+ * this observable will emit search text for every 3 seconds of delaytime and also
+ * if text is updated on search input
+ */
 		this.inputControl.valueChanges
 			.pipe(distinctUntilChanged(), debounceTime(300))
 			.subscribe((data) => {
