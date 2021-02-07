@@ -1,7 +1,8 @@
-.event-container{
-    padding-right: 210px;
-    padding-left: 210px;
+.event-container {
+  padding: 0 30px;
 }
-.eventIcon{
-    height: 34px;;
+
+.eventIcon {
+  height: 34px;
+  ;
 }

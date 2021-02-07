@@ -1,12 +1,12 @@
 .example-header-image {
-  
-    background-size: cover;
-    width: 60px;
-    border-radius: 50%;
-    height: 60px;
-  }
 
-  .mat-card{
-    height: 180px;
-    width: 300px;
-  }
+  background-size: cover;
+  width: 60px;
+  border-radius: 50%;
+  height: 60px;
+}
+
+.mat-card {
+  height: 180px;
+
+}

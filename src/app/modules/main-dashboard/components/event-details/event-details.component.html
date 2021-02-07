@@ -1,35 +1,38 @@
 
-
-
-<div class="event-container" fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" >
-    <img  (click)="backToSearch()" fxFlex="3"class="eventIcon"src="../../../../../assets/back.png">
-    <div  (click)="backToSearch()" fxFlex="20">
-       
-        <h3>Back to Search  </h3>
-
-     </div>
-
+ 
+<div class="event-container" fxLayout="row wrap " fxLayout.xs="column">
+    <div fxFlex="100" fxLayoutAlign="center">
+        <img  (click)="backToSearch()" fxFlex="3"class="eventIcon"src="../../../../../assets/back.png">
+        <div  (click)="backToSearch()" fxFlex="20">
+           
+            <h3>Back to Search  </h3>
+            <div  fxflex="30" *ngIf="artistDetails">
+                <app-artist-card
+                 [name]="artistDetails.name"
+                 [facebookUrl]="artistDetails.facebook_page_url"   
+                 [profilePicUrl]="artistDetails.image_url" 
+                ></app-artist-card>
+            
     
-     <div fxFlex="100">
-
-     </div>
+         </div>
+    
+    </div>
+  
+    
+     
      <ngx-spinner></ngx-spinner>
-   <div  fxflex="30" *ngIf="artistDetails">
-    <app-artist-card
-     [name]="artistDetails.name"
-     [facebookUrl]="artistDetails.facebook_page_url"   
-     [profilePicUrl]="artistDetails.image_url" 
-    ></app-artist-card>
-
+   
    </div>
    
-<ng-container fxFlex="100%">
 
-    <div  class="container" fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="10.5%" fxLayoutAlign="start" *ngIf="allEvents.length">
-        
-        <div fxFlex="30" *ngFor="let events of allEvents">
+    <div  fxLayout="row wrap " fxLayout.xs="column"  *ngIf="allEvents.length" fxLayoutAlign="center">
+        <div fxFlex="80" fxFlex.sm="100"fxFlex.xs="100" fxLayout="row wrap " fxLayoutGap="10px grid">
+        <div *ngFor="let events of allEvents" fxFlex="33.33%"
+        fxFlex.lt-md="33.33%"
+        fxFlex.lt-sm="100%"
+fxFlex.sm="50" fxFlex.xs="100">
             <app-event-card
-             
+            
             [date]="events.datetime"
              [venu]="events.name"
              [city]="events.city"
@@ -39,8 +42,7 @@
        
         
        </div>
-
-</ng-container>
+</div>
 <h2 *ngIf="!allEvents.length && !hasSpinner ">No Events found</h2>
    
        </div>
