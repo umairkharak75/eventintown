@@ -22,6 +22,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## project Documentation
+Run `compodoc -p tsconfig.app.json src -s` to generate documentation of project
+open this url to see documentation in browser `http://127.0.0.1:8080`
+
+
+## Project run description for windows only
+to run project in browser type Run window and type `chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`
+chrome browser will be open. and run project in that browser. otherwise you will get CORS issues in api hitting
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
