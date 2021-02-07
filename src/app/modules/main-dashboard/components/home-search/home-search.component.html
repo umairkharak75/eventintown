@@ -1,20 +1,18 @@
-<div fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"> 
-    <div fxFlex="100" >
-        <app-search-filter  fxFlex="200" (onkeyUp)="findEvents($event)" fxLayoutAlign="center" [placeHolder]="'Search Artist'"></app-search-filter>
-    
-    </div>
-</div>
- 
+<div fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="100">
+    <app-search-filter fxFlex="200" (onkeyUp)="findEvents($event)" fxLayoutAlign="center"
+      [placeHolder]="'Search Artist'"></app-search-filter>
 
-<div class="container" fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" *ngIf="options">
-   <div class="example-card" fxFlex="20%" *ngFor="let searchResult of artists">
-    <app-artist-card
-    (click)="seeEventDetails(searchResult.name)"
-    [name]="searchResult.name"
-     [facebookUrl]="searchResult.facebook_page_url"   
-     [profilePicUrl]="searchResult.image_url" 
-    ></app-artist-card>
-   </div>
-   
+  </div>
+</div>
+
+
+<div class="container" fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+  fxLayoutAlign="center" *ngIf="options">
+  <div class="example-card" fxFlex="20%" *ngFor="let searchResult of artists">
+    <app-artist-card (click)="seeEventDetails(searchResult.name)" [name]="searchResult.name"
+      [facebookUrl]="searchResult.facebook_page_url" [profilePicUrl]="searchResult.image_url"></app-artist-card>
+  </div>
+
 
 </div>

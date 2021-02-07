@@ -5,13 +5,13 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './event-card.component.html',
   styleUrls: ['./event-card.component.css']
 })
-export class EventCardComponent  {
+export class EventCardComponent {
 
 
-@Input() date: string;
-@Input() city:string;
-@Input() country:string;
-@Input() venu:string;
+  @Input() date: string;
+  @Input() city: string;
+  @Input() country: string;
+  @Input() venu: string;
 
 
 }

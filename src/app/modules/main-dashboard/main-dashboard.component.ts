@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './main-dashboard.component.html',
   styleUrls: ['./main-dashboard.component.css']
 })
-export class MainDashboardComponent  {
+export class MainDashboardComponent {
 
 }
 
