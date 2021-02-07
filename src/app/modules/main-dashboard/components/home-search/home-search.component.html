@@ -8,7 +8,7 @@
 
 
 <div class="container" fxLayout="row layout-wrap " fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
-  fxLayoutAlign="center" *ngIf="options">
+  fxLayoutAlign="center" *ngIf="artists">
   <div class="example-card" fxFlex="20%" *ngFor="let searchResult of artists">
     <app-artist-card (click)="seeEventDetails(searchResult.name)" [name]="searchResult.name"
       [facebookUrl]="searchResult.facebook_page_url" [profilePicUrl]="searchResult.image_url"></app-artist-card>
